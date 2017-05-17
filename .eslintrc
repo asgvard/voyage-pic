@@ -1,0 +1,16 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "indent": ["error", 2],
+    "new-cap": ["error", {"capIsNew": false}],
+    "quotes": ["error", "single", "avoid-escape"],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "react/no-array-index-key": ["off"],
+    "arrow-body-style": ["error", "as-needed"],
+    "import/extensions": ["error", "never"],
+    "no-console": ["error", {"allow": ["warn", "error", "log"]}],
+    "id-length": ["error", {"min": 1, "max": 60}],
+    "no-case-declarations": ["off"]
+  }
+}
