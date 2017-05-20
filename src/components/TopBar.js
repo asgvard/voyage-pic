@@ -1,16 +1,21 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import View from './partials/FlexView';
+import TopBarLink from './partials/TopBarLink';
+import theme from '../theme';
 
 const styles = {
-  linkActive: {
-    backgroundColor: 'gray'
+  topBar: {
+    justifyContent: 'space-around',
+    height: 50,
+    backgroundColor: theme.primary,
+    boxShadow: '0px 0px 5px #000000'
   }
 };
 
-const TopBar = () => <ul>
-  <li><NavLink activeStyle={styles.linkActive} exact to="/">Home</NavLink></li>
-  <li><NavLink activeStyle={styles.linkActive} to="/destinations">Destinations</NavLink></li>
-  <li><NavLink activeStyle={styles.linkActive} to="/contacts">Contacts</NavLink></li>
-</ul>;
+const TopBar = () => <View horizontal style={styles.topBar}>
+  <TopBarLink to="/">Home</TopBarLink>
+  <TopBarLink to="/destinations">Destinations</TopBarLink>
+  <TopBarLink to="/contacts">Contacts</TopBarLink>
+</View>;
 
 export default TopBar;
