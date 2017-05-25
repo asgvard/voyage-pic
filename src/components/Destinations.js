@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom';
 import View from './partials/FlexView';
-import {destinations} from '../services/data';
 
 const styles = {
   content: {
@@ -18,13 +18,21 @@ const styles = {
   }
 };
 
-const Destinations = () => <View horizontal style={styles.content}>
-  {destinations.map((country) => <NavLink style={styles.countryLink} to={`/destinations/${country.key}`}>
+const Destinations = (props) => <View horizontal style={styles.content}>
+  {props.destinations.map((country) => <NavLink
+    key={country.key}
+    style={styles.countryLink}
+    to={`/destinations/${country.key}`}
+  >
     <View>
       <img style={styles.image} src={country.image} alt={country.title} />
       {country.title}
     </View>
   </NavLink>)}
 </View>;
+
+Destinations.propTypes = {
+  destinations: PropTypes.array.isRequired
+};
 
 export default Destinations;

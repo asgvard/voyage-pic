@@ -13,9 +13,10 @@ const styles = {
 };
 
 const TopBar = () => <View horizontal style={styles.topBar}>
-  <TopBarLink to="/">Home</TopBarLink>
-  <TopBarLink to="/destinations">Destinations</TopBarLink>
-  <TopBarLink to="/contacts">Contacts</TopBarLink>
+  <TopBarLink to="/">{'Home'}</TopBarLink>
+  <TopBarLink to="/destinations">{'Destinations'}</TopBarLink>
+  <TopBarLink to="/contacts">{'Contacts'}</TopBarLink>
+  <TopBarLink to="/partners">{'Partners'}</TopBarLink>
 </View>;
 
 export default TopBar;

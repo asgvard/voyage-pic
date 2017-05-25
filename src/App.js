@@ -4,13 +4,22 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Home from './components/Home';
-import Destinations from './components/Destinations';
-import Contacts from './components/Contacts';
-import Country from './components/Country';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import {Provider} from 'react-redux';
+import reducer from './reducer';
+import Splash from './containers/Splash';
+import Home from './containers/Home';
+import Destinations from './containers/Destinations';
+import Contacts from './containers/Contacts';
+import Partners from './containers/Partners';
+import Country from './containers/Country';
 import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
 import View from './components/partials/FlexView';
+
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 const routes = [{
   path: '/',
@@ -25,6 +34,10 @@ const routes = [{
   exact: true,
   component: Contacts
 }, {
+  path: '/partners',
+  exact: true,
+  component: Partners
+}, {
   path: '/destinations/:country',
   component: Country
 }];
@@ -36,20 +49,24 @@ const styles = {
   }
 };
 
-const App = () => <BrowserRouter>
-  <View style={styles.content}>
-    <TopBar />
+const App = () => <Provider store={store}>
+  <Splash>
+    <BrowserRouter>
+      <View style={styles.content}>
+        <TopBar />
 
-    <Switch>
-      {routes.map((route, index) => <Route
-        key={index}
-        path={route.path}
-        exact={route.exact}
-        component={route.component}
-      />)}
-      <Route key={'not-found'} component={NotFound}/>
-    </Switch>
-  </View>
-</BrowserRouter>;
+        <Switch>
+          {routes.map((route, index) => <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />)}
+          <Route key={'not-found'} component={NotFound}/>
+        </Switch>
+      </View>
+    </BrowserRouter>
+  </Splash>
+</Provider>;
 
 export default App;
