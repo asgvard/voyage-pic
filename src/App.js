@@ -18,6 +18,7 @@ import Country from './containers/Country';
 import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
 import View from './components/partials/FlexView';
+import FullscreenGallery from './containers/FullscreenGallery';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
@@ -64,6 +65,8 @@ const App = () => <Provider store={store}>
           />)}
           <Route key={'not-found'} component={NotFound}/>
         </Switch>
+
+        <FullscreenGallery />
       </View>
     </BrowserRouter>
   </Splash>
