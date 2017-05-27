@@ -14,7 +14,9 @@ export const ACTION_TYPES = {
   LOAD_PORTFOLIO_REQUEST: 'LOAD_PORTFOLIO_REQUEST',
   LOAD_PORTFOLIO_SUCCESS: 'LOAD_PORTFOLIO_SUCCESS',
   LOAD_PORTFOLIO_FAILURE: 'LOAD_PORTFOLIO_FAILURE',
-  INVOKE_FULLSCREEN_GALLERY: 'INVOKE_FULLSCREEN_GALLERY'
+  INVOKE_FULLSCREEN_GALLERY: 'INVOKE_FULLSCREEN_GALLERY',
+  GALLERY_NAVIGATE: 'GALLERY_NAVIGATE',
+  CLOSE_GALLERY: 'CLOSE_GALLERY'
 };
 
 const loadDestinationsSuccess = (destinations) => ({
@@ -109,4 +111,15 @@ export const invokeFullscreenGallery = (photographer, photoIndex) => ({
     photographer,
     photoIndex
   }
+});
+
+export const galleryNavigate = (next = true) => ({
+  type: ACTION_TYPES.GALLERY_NAVIGATE,
+  payload: {
+    next
+  }
+});
+
+export const closeGallery = () => ({
+  type: ACTION_TYPES.CLOSE_GALLERY
 });

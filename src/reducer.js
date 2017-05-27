@@ -48,6 +48,21 @@ function appReducer(state = initialState, action) {
     });
   }
 
+  case ACTION_TYPES.CLOSE_GALLERY: {
+    return Object.assign({}, state, {
+      gallery: initialState.gallery
+    });
+  }
+
+  case ACTION_TYPES.GALLERY_NAVIGATE: {
+    return Object.assign({}, state, {
+      gallery: {
+        ...state.gallery,
+        photoIndex: action.payload.next ? state.gallery.photoIndex + 1 : state.gallery.photoIndex - 1
+      }
+    });
+  }
+
   default:
     return state;
   }
