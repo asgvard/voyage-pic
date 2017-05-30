@@ -28,15 +28,15 @@ export const photographers = {
 export const portfolio = {
   'bjorn': [
     'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg',
+    'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg',
     'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg',
-    'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg',
-    'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg',
+    'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg',
     'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg'
   ],
   'einar': [
     'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg',
+    'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg',
     'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg',
-    'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg',
-    'http://scms.machteamsoft.ro/uploads/photos/original/117126-f2.jpg'
+    'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/norway-photography-70__880.jpg'
   ]
 };
