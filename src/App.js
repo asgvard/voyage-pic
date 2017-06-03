@@ -10,8 +10,9 @@ import logger from 'redux-logger';
 import {Provider} from 'react-redux';
 import reducer from './reducer';
 import Splash from './containers/Splash';
-import Home from './containers/Home';
 import Destinations from './containers/Destinations';
+import About from './containers/About';
+import Prices from './containers/Prices';
 import Contacts from './containers/Contacts';
 import Partners from './containers/Partners';
 import Country from './containers/Country';
@@ -19,17 +20,22 @@ import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
 import View from './components/partials/FlexView';
 import FullscreenGallery from './containers/FullscreenGallery';
+import theme from './theme';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 const routes = [{
   path: '/',
   exact: true,
-  component: Home
-}, {
-  path: '/destinations',
-  exact: true,
   component: Destinations
+}, {
+  path: '/prices',
+  exact: true,
+  component: Prices
+}, {
+  path: '/about',
+  exact: true,
+  component: About
 }, {
   path: '/contacts',
   exact: true,
@@ -46,7 +52,8 @@ const routes = [{
 const styles = {
   content: {
     width: '100%',
-    height: '100%'
+    height: '100%',
+    backgroundColor: theme.background
   }
 };
 

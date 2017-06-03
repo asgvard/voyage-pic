@@ -14,12 +14,16 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
-  linkText: {
+  linkContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
     borderBottom: 'solid 4px transparent'
   },
-  linkTextActive: {
+  linkContentActive: {
+    justifyContent: 'center',
+    alignItems: 'center',
     borderBottom: 'solid 4px',
-    borderBottomColor: theme.textPrimaryLight
+    borderBottomColor: theme.accent
   }
 };
 
@@ -30,7 +34,7 @@ const TopBarLink = (props) => <Route
     to={props.to}
     exact
   >
-    <View style={match && match.isExact ? styles.linkTextActive : styles.linkText}>{props.children}</View>
+    <View style={match && match.isExact ? styles.linkContentActive : styles.linkContent}>{props.children}</View>
   </NavLink>}
 />;
 

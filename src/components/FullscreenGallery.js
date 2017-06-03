@@ -79,7 +79,7 @@ class FullscreenGallery extends Component {
         <View style={styles.closeButtonWrapper}>
           <Button
             style={styles.closeButton}
-            mouseOverStyle={styles.closeButtonHighlighted}
+            highlightedStyle={styles.closeButtonHighlighted}
             onClick={this.props.closeGallery}
           >
             <i

@@ -11,13 +11,13 @@ class Button extends Component {
   }
 
   render() {
-    const mouseOverStyle = {
+    const highlightedStyle = {
       ...this.props.style,
-      ...this.props.mouseOverStyle
+      ...this.props.highlightedStyle
     };
 
     return (<div
-      style={this.state.mouseOver ? mouseOverStyle : this.props.style}
+      style={this.state.mouseOver ? highlightedStyle : this.props.style}
       onMouseEnter={() => {
         this.setState({
           mouseOver: true
@@ -38,12 +38,12 @@ class Button extends Component {
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   style: PropTypes.object,
-  mouseOverStyle: PropTypes.object
+  highlightedStyle: PropTypes.object
 };
 
 Button.defaultProps = {
   style: {},
-  mouseOverStyle: {}
+  highlightedStyle: {}
 };
 
 export default Button;

@@ -8,6 +8,6 @@ const styles = {
   }
 };
 
-const Home = () => <View style={styles.content}>{'Home'}</View>;
+const About = () => <View style={styles.content}>{'About'}</View>;
 
-export default Home;
+export default About;

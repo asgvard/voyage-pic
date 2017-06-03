@@ -8,6 +8,6 @@ const styles = {
   }
 };
 
-const NotFound = () => <View style={styles.content}>{'404 Not Found'}</View>;
+const Prices = () => <View style={styles.content}>{'Prices'}</View>;
 
-export default NotFound;
+export default Prices;
