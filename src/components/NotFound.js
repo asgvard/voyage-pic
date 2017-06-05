@@ -1,13 +1,16 @@
 import React from 'react';
 import View from './partials/FlexView';
+import theme from '../theme';
 
 const styles = {
   content: {
-    width: '100%',
-    height: '100%'
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: theme.textSecondary
   }
 };
 
-const NotFound = () => <View style={styles.content}>{'404 Not Found'}</View>;
+const NotFound = () => <View style={styles.content}>{'404 Page Not Found'}</View>;
 
 export default NotFound;

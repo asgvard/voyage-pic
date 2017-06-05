@@ -1,7 +1,6 @@
 import {
   destinations as staticDestinations,
-  photographers as staticPhotographers,
-  portfolio as staticPortfolio
+  photographers as staticPhotographers
 } from './static/data';
 
 export const ACTION_TYPES = {
@@ -97,9 +96,12 @@ export const loadPortfolio = (photographer) => async (dispatch) => {
       type: ACTION_TYPES.LOAD_PORTFOLIO_REQUEST
     });
 
-    const portfolio = staticPortfolio[photographer] || [];
+    const portfolio = await fetch(`http://voyage-pic.com/portfolio.php?photographer=${photographer}`, {
+      method: 'GET'
+    }).then((response) => response.json());
 
-    dispatch(loadPortfolioSuccess(portfolio, photographer));
+    dispatch(loadPortfolioSuccess(portfolio.map(
+      (photo) => `http://voyage-pic.com/public/images/portfolio/${photographer}/${photo}`), photographer));
   } catch (error) {
     dispatch(loadPortfolioFailure(error));
   }

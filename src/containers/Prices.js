@@ -4,6 +4,6 @@ import Prices from '../components/Prices';
 
 const PricesContainer = (props) => <Prices {...props} />;
 
-const mapStateToProps = () => ({});
+const mapStateToProps = ({destinations}) => ({destinations});
 
 export default connect(mapStateToProps, {})(PricesContainer);

@@ -8,6 +8,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import {Provider} from 'react-redux';
+import 'whatwg-fetch';
 import reducer from './reducer';
 import Splash from './containers/Splash';
 import Destinations from './containers/Destinations';
@@ -19,6 +20,7 @@ import Country from './containers/Country';
 import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
 import View from './components/partials/FlexView';
+import Footer from './components/partials/Footer';
 import FullscreenGallery from './containers/FullscreenGallery';
 import theme from './theme';
 
@@ -54,6 +56,9 @@ const styles = {
     width: '100%',
     height: '100%',
     backgroundColor: theme.background
+  },
+  footerWrapper: {
+    height: 20
   }
 };
 
@@ -72,6 +77,10 @@ const App = () => <Provider store={store}>
           />)}
           <Route key={'not-found'} component={NotFound}/>
         </Switch>
+
+        <View style={styles.footerWrapper}>
+          <Footer />
+        </View>
 
         <FullscreenGallery />
       </View>

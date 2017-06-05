@@ -15,7 +15,8 @@ const styles = {
     backgroundColor: 'rgba(0, 0, 0, 0.8)'
   },
   header: {
-    height: 60,
+    height: 46,
+    padding: 3,
     justifyContent: 'flex-end',
     alignItems: 'center'
   },
@@ -23,8 +24,8 @@ const styles = {
     flex: 1
   },
   closeButtonWrapper: {
-    height: 50,
-    width: 50,
+    height: 40,
+    width: 40,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -33,24 +34,34 @@ const styles = {
     width: 40,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderRadius: 20
   },
   closeButtonHighlighted: {
-    backgroundColor: 'rgba(255, 255, 255, 0.6)'
+    backgroundColor: 'rgba(255, 255, 255, 0.4)'
   },
   closeButtonIcon: {
+    cursor: 'pointer',
     fontSize: 40,
     color: theme.textPrimaryLight
   },
   arrowWrapper: {
+    minWidth: 60,
+    cursor: 'pointer'
+  },
+  arrowButton: {
+    height: '100%',
+    width: '100%',
+    display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    minWidth: 40
+    alignItems: 'center'
+  },
+  arrowButtonHighlighted: {
+    backgroundColor: 'rgba(255, 255, 255, 0.4)'
   },
   arrowIcon: {
-    fontSize: 40,
-    color: theme.textPrimaryLight,
-    cursor: 'pointer'
+    fontSize: 60,
+    color: theme.textPrimaryLight
   },
   photoWrapper: {
     flex: 1,
@@ -93,7 +104,9 @@ class FullscreenGallery extends Component {
         <View
           style={styles.arrowWrapper}
         >
-          {photos && photos.length > 1 && this.props.photoIndex > 0 && <div
+          {photos && photos.length > 1 && this.props.photoIndex > 0 && <Button
+            style={styles.arrowButton}
+            highlightedStyle={styles.arrowButtonHighlighted}
             onClick={() => {
               this.props.galleryNavigate(false);
             }}
@@ -104,7 +117,7 @@ class FullscreenGallery extends Component {
             >
               {'keyboard_arrow_left'}
             </i>
-          </div>}
+          </Button>}
         </View>
         <View style={styles.photoWrapper}>
           {photoSource && <img style={styles.photoImage} src={photoSource} alt={this.props.photoIndex} />}
@@ -112,7 +125,9 @@ class FullscreenGallery extends Component {
         <View
           style={styles.arrowWrapper}
         >
-          {photos && photos.length > 1 && this.props.photoIndex < (photos.length - 1) && <div
+          {photos && photos.length > 1 && this.props.photoIndex < (photos.length - 1) && <Button
+            style={styles.arrowButton}
+            highlightedStyle={styles.arrowButtonHighlighted}
             onClick={() => {
               this.props.galleryNavigate(true);
             }}
@@ -123,7 +138,7 @@ class FullscreenGallery extends Component {
             >
               {'keyboard_arrow_right'}
             </i>
-          </div>}
+          </Button>}
         </View>
       </View>
     </View>);

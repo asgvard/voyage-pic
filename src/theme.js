@@ -1,11 +1,12 @@
 const themes = [{
-  primary: '#1079aa',
-  secondary: '#449bdc',
+  primary: '#08729d',
+  secondary: '#0d6793',
   background: '#fafaff',
-  textPrimary: '#2b72b4',
-  textSecondary: '#515151',
-  textPrimaryLight: '#e3fcff',
-  accent: '#9becff'
+  backgroundDarker: '#f2f2f7',
+  textPrimary: '#0c6090',
+  textSecondary: '#c9c9c9',
+  textPrimaryLight: '#fafaff',
+  accent: '#ffd78b'
 }];
 
 const ACTIVE_THEME = 0;

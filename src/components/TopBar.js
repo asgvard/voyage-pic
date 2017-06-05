@@ -9,7 +9,8 @@ const styles = {
   topBar: {
     height: 50,
     backgroundColor: theme.primary,
-    boxShadow: '0px 0px 5px #000000'
+    boxShadow: '0px 0px 5px #000000',
+    zIndex: 3
   },
   logoWrapper: {
     flex: 1
@@ -40,21 +41,34 @@ const styles = {
     paddingRight: 10,
     fontSize: 22,
     color: theme.textPrimaryLight
+  },
+  topBarLinkText: {
+    fontSize: 16
   }
 };
 
 const TopBar = () => <View horizontal style={styles.topBar}>
   <View style={styles.logoWrapper}>
     <NavLink style={styles.logoLink} to="/">
-      <img style={styles.logo} src={require('../../public/logo.png')} alt={'Voyage Pic'} />
+      <img style={styles.logo} src={require('../../resources/images/logo.png')} alt={'Voyage Pic'} />
     </NavLink>
   </View>
   <View horizontal style={styles.navigationWrapper}>
-    <TopBarLink to="/">{'Destinations'}</TopBarLink>
-    <TopBarLink to="/prices">{'Prices'}</TopBarLink>
-    <TopBarLink to="/about">{'About'}</TopBarLink>
-    <TopBarLink to="/contacts">{'Contacts'}</TopBarLink>
-    <TopBarLink to="/partners">{'Partners'}</TopBarLink>
+    <TopBarLink to="/">
+      <div style={styles.topBarLinkText}>{'Регионы'}</div>
+    </TopBarLink>
+    <TopBarLink to="/prices">
+      <div style={styles.topBarLinkText}>{'Цены'}</div>
+    </TopBarLink>
+    <TopBarLink to="/about">
+      <div style={styles.topBarLinkText}>{'О нас'}</div>
+    </TopBarLink>
+    <TopBarLink to="/contacts">
+      <div style={styles.topBarLinkText}>{'Контакты'}</div>
+    </TopBarLink>
+    <TopBarLink to="/partners">
+      <div style={styles.topBarLinkText}>{'Партнеры'}</div>
+    </TopBarLink>
   </View>
   <View horizontal style={styles.socialWrapper}>
     <a href={'https://www.instagram.com/voyage.pic'} target={'_blank'} style={styles.socialIconLink}>

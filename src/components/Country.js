@@ -2,43 +2,98 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import View from './partials/FlexView';
 import NotFound from './NotFound';
+import theme from '../theme';
 
 const styles = {
   content: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
     overflow: 'scroll'
   },
   countryWrapper: {
-    minHeight: 250
+    minHeight: 240,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  countryImageWrapper: {
+    minHeight: 200,
+    minWidth: 280,
+    maxHeight: 200,
+    maxWidth: 280,
+    position: 'relative'
   },
   countryImage: {
-    height: 200,
-    width: 200,
+    minHeight: '100%',
+    minWidth: '100%',
     objectFit: 'cover'
+  },
+  countryTitle: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 2,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 3,
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: theme.textPrimaryLight
   },
   photographersWrapper: {
-    minHeight: 280
+    minHeight: 220,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   photographerWrapper: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    minHeight: 200,
+    minWidth: 200,
+    maxHeight: 200,
+    maxWidth: 200,
+    position: 'relative',
+    padding: 2
   },
   photographerImage: {
-    height: 200,
-    width: 200,
-    objectFit: 'cover'
+    minHeight: '100%',
+    maxHeight: '100%',
+    objectFit: 'cover',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: 'rgba(0, 0, 0, 0)'
+  },
+  photographerImageActive: {
+    borderColor: theme.accent
+  },
+  photographerName: {
+    position: 'absolute',
+    bottom: 4,
+    left: 4,
+    right: 4,
+    zIndex: 2,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 3,
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: theme.textPrimaryLight
   },
   photographerNameActive: {
-    backgroundColor: 'grey'
+    color: theme.accent
   },
   portfolioWrapper: {
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    padding: 10,
+    justifyContent: 'center'
   },
   portfolioImage: {
     height: 200,
     width: 200,
     objectFit: 'cover',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    padding: 1
+  },
+  noPhotographers: {
+    flex: 1,
+    textAlign: 'center',
+    color: theme.textSecondary
   }
 };
 
@@ -86,8 +141,14 @@ class Country extends Component {
         this.onPhotographerSelected(photographer.id);
       }}
     >
-      <img style={styles.photographerImage} src={photographer.image} alt={photographer.name} />
-      <div style={photographer.id === this.state.photographer ? styles.photographerNameActive : {}}>
+      <img style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
+        ...styles.photographerImage,
+        ...styles.photographerImageActive
+      } : styles.photographerImage} src={photographer.image} alt={photographer.name} />
+      <div style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
+        ...styles.photographerName,
+        ...styles.photographerNameActive
+      } : styles.photographerName}>
         {photographer.name}
       </div>
     </View>);
@@ -118,13 +179,20 @@ class Country extends Component {
     }
 
     return (<View style={styles.content}>
-      <View style={styles.countryWrapper}>
-        <img style={styles.countryImage} src={this.props.country.image} alt={this.props.country.title} />
-        {this.props.country.title}
+      <View horizontal style={styles.countryWrapper}>
+        <View style={styles.countryImageWrapper}>
+          <img style={styles.countryImage} src={this.props.country.image} alt={this.props.country.title} />
+          <div style={styles.countryTitle}>
+            {this.props.country.title}
+          </div>
+        </View>
       </View>
-      <View horizontal style={styles.photographersWrapper}>
+      {this.props.photographers.length === 0 && <View style={styles.noPhotographers}>
+        {'Мы занимаемся поиском фотографов в данном регионе'}
+      </View>}
+      {this.props.photographers.length && <View horizontal style={styles.photographersWrapper}>
         {this.props.photographers.map((photographer) => this.renderPhotographer(photographer))}
-      </View>
+      </View>}
       {this.renderPortfolio()}
     </View>);
   }
