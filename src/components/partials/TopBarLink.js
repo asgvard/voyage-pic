@@ -6,7 +6,7 @@ import theme from '../../theme';
 
 const styles = {
   link: {
-    width: 120,
+    flex: 1,
     textDecoration: 'none',
     color: theme.textPrimaryLight,
     fontSize: 18,
@@ -17,12 +17,12 @@ const styles = {
   linkContent: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottom: 'solid 4px transparent'
+    borderBottom: 'solid 0.3vw transparent'
   },
   linkContentActive: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottom: 'solid 4px',
+    borderBottom: 'solid 0.3vw',
     borderBottomColor: theme.accent
   }
 };

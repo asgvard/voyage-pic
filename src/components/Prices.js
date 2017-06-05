@@ -10,28 +10,28 @@ const styles = {
     overflow: 'auto'
   },
   descriptionWrapper: {
-    padding: 30
+    padding: '3vw'
   },
   description: {
-    width: '60%',
+    width: '90%',
     margin: 'auto',
     textAlign: 'justify',
     color: theme.textPrimary,
-    fontSize: 18,
+    fontSize: '1.6vw',
     whiteSpace: 'pre-wrap'
   },
   pricesWrapper: {
-    padding: 20
+    padding: '3vw'
   },
   prices: {
-    width: '60%',
+    width: '90%',
     margin: 'auto'
   },
   countryLink: {
     textDecoration: 'none'
   },
   priceRow: {
-    height: 40,
+    height: '4vw',
     backgroundColor: theme.backgroundDarker
   },
   priceRowOdd: {
@@ -42,14 +42,14 @@ const styles = {
     justifyContent: 'center',
     flex: 1,
     color: theme.textPrimary,
-    fontSize: 20
+    fontSize: '1.6vw'
   },
   priceRowValue: {
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
     color: theme.textPrimary,
-    fontSize: 20
+    fontSize: '1.6vw'
   }
 };
 

@@ -7,7 +7,7 @@ import theme from '../theme';
 
 const styles = {
   topBar: {
-    height: 50,
+    height: '5vw',
     backgroundColor: theme.primary,
     boxShadow: '0px 0px 5px #000000',
     zIndex: 3
@@ -19,7 +19,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     flex: 1,
-    padding: 7
+    padding: '1.4vw'
   },
   logo: {
     maxWidth: '100%',
@@ -28,22 +28,23 @@ const styles = {
   },
   navigationWrapper: {
     justifyContent: 'center',
-    flex: 5
+    flex: 3,
+    paddingLeft: '2vw',
+    paddingRight: '2vw'
   },
   socialWrapper: {
     flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center',
-    padding: 10
+    alignItems: 'center'
   },
   socialIconLink: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    fontSize: 22,
+    paddingLeft: '2vw',
+    paddingRight: '2vw',
+    fontSize: '1.8vw',
     color: theme.textPrimaryLight
   },
   topBarLinkText: {
-    fontSize: 16
+    fontSize: '1.4vw'
   }
 };
 
