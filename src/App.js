@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Switch
 } from 'react-router-dom';
@@ -65,7 +65,7 @@ const styles = {
 
 const App = () => <Provider store={store}>
   <Splash>
-    <BrowserRouter>
+    <HashRouter>
       <View style={styles.content}>
         <TopBar />
 
@@ -85,7 +85,7 @@ const App = () => <Provider store={store}>
 
         <FullscreenGallery />
       </View>
-    </BrowserRouter>
+    </HashRouter>
   </Splash>
 </Provider>;
 

@@ -57,12 +57,11 @@ const styles = {
   },
   photographerWrapper: {
     cursor: 'pointer',
-    maxHeight: 400,
-    maxWidth: 400,
-    minWidth: 400,
+    minWidth: 200,
+    width: '40%',
     textAlign: 'center',
     display: 'inline-block',
-    padding: '2vw',
+    padding: '1vw',
     verticalAlign: 'top'
   },
   photographerAvatar: {
