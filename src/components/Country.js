@@ -10,27 +10,30 @@ const styles = {
     overflow: 'scroll'
   },
   countryWrapper: {
-    minHeight: 240,
+    flex: 1,
+    minHeight: 280,
+    maxHeight: 280,
     justifyContent: 'center',
     alignItems: 'center'
   },
   countryImageWrapper: {
-    minHeight: 200,
-    minWidth: 280,
-    maxHeight: 200,
-    maxWidth: 280,
+    flex: 1,
+    maxHeight: 280,
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
     position: 'relative'
   },
   countryImage: {
-    minHeight: '100%',
-    minWidth: '100%',
+    maxHeight: 240,
     objectFit: 'cover'
   },
   countryTitle: {
     position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+    bottom: 20,
+    left: 40,
+    right: 40,
     zIndex: 2,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: 3,
@@ -38,50 +41,71 @@ const styles = {
     textDecoration: 'none',
     color: theme.textPrimaryLight
   },
-  photographersWrapper: {
-    minHeight: 220,
+  countryDescriptionWrapper: {
+    flex: 2,
+    padding: '2vw'
+  },
+  countryDescription: {
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center'
+    flex: 1,
+    color: theme.textPrimary,
+    fontSize: '1.6vw'
+  },
+  photographersWrapper: {
+    textAlign: 'center'
   },
   photographerWrapper: {
     cursor: 'pointer',
-    minHeight: 200,
-    minWidth: 200,
-    maxHeight: 200,
-    maxWidth: 200,
+    maxHeight: 400,
+    maxWidth: 400,
+    minWidth: 400,
+    textAlign: 'center',
+    display: 'inline-block',
+    padding: '2vw',
+    verticalAlign: 'top'
+  },
+  photographerAvatar: {
+    width: 200,
+    height: 200,
     position: 'relative',
-    padding: 2
+    display: 'inline-block'
   },
   photographerImage: {
-    minHeight: '100%',
-    maxHeight: '100%',
+    minHeight: 196,
+    minWidth: 196,
+    maxHeight: 196,
+    maxWidth: 196,
     objectFit: 'cover',
     borderStyle: 'solid',
     borderWidth: 2,
-    borderColor: 'rgba(0, 0, 0, 0)'
+    borderColor: 'rgba(0, 0, 0, 0)',
+    opacity: 0.5
   },
   photographerImageActive: {
-    borderColor: theme.accent
+    borderColor: theme.accent,
+    opacity: 1
   },
   photographerName: {
     position: 'absolute',
-    bottom: 4,
-    left: 4,
-    right: 4,
+    bottom: 2,
+    left: 2,
+    right: 2,
     zIndex: 2,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: 3,
     textAlign: 'center',
     textDecoration: 'none',
-    color: theme.textPrimaryLight
+    color: theme.textPrimaryLight,
+    opacity: 0.5
   },
   photographerNameActive: {
-    color: theme.accent
+    color: theme.accent,
+    opacity: 1
   },
   portfolioWrapper: {
-    flexWrap: 'wrap',
     padding: 10,
-    justifyContent: 'center'
+    textAlign: 'center'
   },
   portfolioImage: {
     height: 200,
@@ -89,6 +113,18 @@ const styles = {
     objectFit: 'cover',
     cursor: 'pointer',
     padding: 1
+  },
+  photographerDescription: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.textPrimary,
+    fontSize: '1vw',
+    textAlign: 'justify',
+    opacity: 0.5,
+    padding: '2vw'
+  },
+  photographerDescriptionActive: {
+    opacity: 1
   },
   noPhotographers: {
     flex: 1,
@@ -134,24 +170,32 @@ class Country extends Component {
   }
 
   renderPhotographer(photographer) {
-    return (<View
+    return (<div
       key={photographer.id}
       style={styles.photographerWrapper}
       onClick={() => {
         this.onPhotographerSelected(photographer.id);
       }}
     >
-      <img style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
-        ...styles.photographerImage,
-        ...styles.photographerImageActive
-      } : styles.photographerImage} src={photographer.image} alt={photographer.name} />
-      <div style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
-        ...styles.photographerName,
-        ...styles.photographerNameActive
-      } : styles.photographerName}>
-        {photographer.name}
+      <div style={styles.photographerAvatar}>
+        <img style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
+          ...styles.photographerImage,
+          ...styles.photographerImageActive
+        } : styles.photographerImage} src={photographer.image} alt={photographer.name} />
+        <div style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
+          ...styles.photographerName,
+          ...styles.photographerNameActive
+        } : styles.photographerName}>
+          {photographer.name}
+        </div>
       </div>
-    </View>);
+      <View style={photographer.id === this.state.photographer && this.props.photographers.length > 1 ? {
+        ...styles.photographerDescription,
+        ...styles.photographerDescriptionActive
+      } : styles.photographerDescription}>
+        {photographer.description}
+      </View>
+    </div>);
   }
 
   renderPortfolio() {
@@ -159,7 +203,7 @@ class Country extends Component {
       return null;
     }
 
-    return (<View horizontal style={styles.portfolioWrapper}>
+    return (<div style={styles.portfolioWrapper}>
       {this.props.portfolio[this.state.photographer].map((photo, index) =>
         <img
           key={index}
@@ -170,7 +214,7 @@ class Country extends Component {
             this.props.onPhotoClicked(this.state.photographer, index);
           }}
         />)}
-    </View>);
+    </div>);
   }
 
   render() {
@@ -186,13 +230,18 @@ class Country extends Component {
             {this.props.country.title}
           </div>
         </View>
+        <View style={styles.countryDescriptionWrapper}>
+          <View style={styles.countryDescription}>
+            {'Познакомьтесь с нашей командой фотографов в данном регионе'}
+          </View>
+        </View>
       </View>
       {this.props.photographers.length === 0 && <View style={styles.noPhotographers}>
-        {'Мы занимаемся поиском фотографов в данном регионе'}
+        {'Данные о фотографах в данном регионе временно недоступны.'}
       </View>}
-      {this.props.photographers.length && <View horizontal style={styles.photographersWrapper}>
+      {this.props.photographers.length && <div style={styles.photographersWrapper}>
         {this.props.photographers.map((photographer) => this.renderPhotographer(photographer))}
-      </View>}
+      </div>}
       {this.renderPortfolio()}
     </View>);
   }

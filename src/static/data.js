@@ -119,10 +119,12 @@ export const photographers = {
   'spain': [{
     id: 'svetlana',
     name: 'Светлана',
-    image: 'http://www.voyage-pic.com/public/images/photographers/spain/svetlana.jpg'
+    image: 'http://www.voyage-pic.com/public/images/photographers/spain/svetlana.jpg',
+    description: 'Привет, меня зовут Светлана и вот уже несколько лет я живу в прекрасном городе – Барселона. Работаю в самых прекрасных уголках многогранной Испании. Я специализируюсь на разных сьемках: love story, портретная, свадебная, семейная. Помогу Вам окунуться в мир творчества и искусства, и покажу самые волшебные города и места сказочной Испании, которые перенесутся на Ваши фотографии.'
   }, {
     id: 'vadim',
-    name: 'Вадим Смоляк',
-    image: 'http://www.voyage-pic.com/public/images/photographers/spain/vadim.jpg'
+    name: 'Вадим',
+    image: 'http://www.voyage-pic.com/public/images/photographers/spain/vadim.jpg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt efficitur purus eu tristique. Etiam commodo turpis ac libero convallis, eget elementum ante faucibus. In a ornare felis, in pellentesque velit. Integer mi nisl, porta at maximus ut, laoreet non eros. Integer mollis felis lectus. Proin iaculis diam vel erat eleifend, ut consequat nisi mattis.'
   }]
 };
