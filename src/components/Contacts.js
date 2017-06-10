@@ -1,48 +1,4 @@
 import React from 'react';
-import View from './partials/FlexView';
-import theme from '../theme';
-
-const styles = {
-  content: {
-    flex: 1,
-    overflow: 'auto',
-    justifyContent: 'center'
-  },
-  contactsWrapper: {
-    padding: 20
-  },
-  contacts: {
-    width: '60%',
-    margin: 'auto'
-  },
-  countryLink: {
-    textDecoration: 'none'
-  },
-  contactRow: {
-    height: 40,
-    backgroundColor: theme.backgroundDarker
-  },
-  contactRowOdd: {
-    backgroundColor: theme.backgroundColor
-  },
-  contactRowTitle: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    color: theme.textPrimary,
-    fontSize: 20
-  },
-  contactRowValue: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    color: theme.textPrimary,
-    fontSize: 20
-  },
-  link: {
-    textDecoration: 'none'
-  }
-};
 
 const contacts = [{
   title: 'Телефоны',
@@ -61,27 +17,21 @@ const contacts = [{
   value: 'info@voyage-pic.com'
 }, {
   title: 'Instagram',
-  value: <a href={'https://www.instagram.com/voyage.pic'} target={'_blank'} style={styles.link}>{'voyage.pic'}</a>
+  value: <a href={'https://www.instagram.com/voyage.pic'} target={'_blank'}>{'voyage.pic'}</a>
 }, {
   title: 'Facebook',
-  value: <a href={'https://www.facebook.com/voyagepic'} target={'_blank'} style={styles.link}>{'voyagepic'}</a>
+  value: <a href={'https://www.facebook.com/voyagepic'} target={'_blank'}>{'voyagepic'}</a>
 }];
 
-const Contacts = () => <View style={styles.content}>
-  <div style={styles.contactsWrapper}>
-    <View style={styles.contacts}>
-      {contacts.map((contact, index) => <View
-        horizontal
-        style={index % 2 === 0 ? styles.contactRow : {
-          ...styles.contactRow,
-          ...styles.contactRowOdd
-        }}
-      >
-        <View style={styles.contactRowTitle}>{contact.title}</View>
-        <View style={styles.contactRowValue}>{contact.value}</View>
-      </View>)}
-    </View>
+const Contacts = () => <div>
+  <div>
+    <div>
+      {contacts.map((contact, index) => <div>
+        <div>{contact.title}</div>
+        <div>{contact.value}</div>
+      </div>)}
+    </div>
   </div>
-</View>;
+</div>;
 
 export default Contacts;

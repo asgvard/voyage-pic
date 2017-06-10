@@ -1,0 +1,56 @@
+.footer {
+  height: 2rem;
+  width: 100%;
+  clear: both;
+  background-color: #08729d;
+}
+
+.footer .text {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  color: #fafaff;
+}
+
+.footer .copyright {
+  width: 20%;
+  line-height: 2rem;
+  font-size: .6rem;
+}
+
+.footer .description {
+  width: 60%;
+  line-height: 1rem;
+  font-size: .6rem;
+  text-align: center;
+}
+
+.footer .links {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+}
+
+.footer a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fafaff;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+  .footer .description {
+    display: none;
+  }
+
+  .footer .copyright {
+    width: 30%;
+  }
+
+  .footer .links {
+    width: 70%;
+  }
+}

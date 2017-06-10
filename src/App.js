@@ -19,10 +19,7 @@ import Partners from './containers/Partners';
 import Country from './containers/Country';
 import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
-import View from './components/partials/FlexView';
-import Footer from './components/partials/Footer';
 import FullscreenGallery from './containers/FullscreenGallery';
-import theme from './theme';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
@@ -51,22 +48,10 @@ const routes = [{
   component: Country
 }];
 
-const styles = {
-  content: {
-    width: '100%',
-    height: '100%',
-    overflow: 'hidden',
-    backgroundColor: theme.background
-  },
-  footerWrapper: {
-    height: 20
-  }
-};
-
 const App = () => <Provider store={store}>
   <Splash>
     <HashRouter>
-      <View style={styles.content}>
+      <div id="App">
         <TopBar />
 
         <Switch>
@@ -78,13 +63,8 @@ const App = () => <Provider store={store}>
           />)}
           <Route key={'not-found'} component={NotFound}/>
         </Switch>
-
-        <View style={styles.footerWrapper}>
-          <Footer />
-        </View>
-
         <FullscreenGallery />
-      </View>
+      </div>
     </HashRouter>
   </Splash>
 </Provider>;

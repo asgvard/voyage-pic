@@ -1,36 +1,29 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import View from './FlexView';
-import theme from '../../theme';
+import './Footer.css';
 
-const styles = {
-  content: {
-    width: '100%',
-    height: '100%',
-    borderTopStyle: 'solid',
-    borderTopWidth: 1,
-    borderTopColor: theme.textSecondary,
-    alignItems: 'center',
-    justifyContent: 'flex-end'
-  },
-  socialIconLink: {
-    color: theme.textSecondary,
-    fontSize: 16,
-    paddingLeft: 15,
-    paddingRight: 15
-  }
-};
-
-const Footer = () => <View horizontal style={styles.content}>
-  <a href={'https://www.instagram.com/voyage.pic'} target={'_blank'} style={styles.socialIconLink}>
-    <FontAwesome name={'instagram'} />
-  </a>
-  <a href={'https://www.facebook.com/voyagepic'} target={'_blank'} style={styles.socialIconLink}>
-    <FontAwesome name={'facebook-square'} />
-  </a>
-  <a href={'mailto:info@voyage-pic.com'} style={styles.socialIconLink}>
-    <FontAwesome name={'envelope-o'} />
-  </a>
-</View>;
+const Footer = () => <div className="footer">
+  <div className="container">
+    <div className="text copyright">
+      {'© 2017 VoyagePic'}
+    </div>
+    <div className="text description">
+      {'Сохрани незабываемые эмоции с командой профессионалов.'}
+      <br/>
+      {'Мы снимаем в разных уголках планеты для Вас!'}
+    </div>
+    <div className="links">
+      <a href={'https://www.facebook.com/voyagepic'} target={'_blank'}>
+        <FontAwesome name={'facebook-square'} />
+      </a>
+      <a href={'https://www.instagram.com/voyage.pic'} target={'_blank'}>
+        <FontAwesome name={'instagram'} />
+      </a>
+      <a href={'https://www.youtube.com/channel/UCuwux3GC-w-vF-AiAkbbk5w'} target={'_blank'}>
+        <FontAwesome name={'youtube'} />
+      </a>
+    </div>
+  </div>
+</div>;
 
 export default Footer;

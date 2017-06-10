@@ -1,85 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom';
-import View from './partials/FlexView';
-import theme from '../theme';
 
-const styles = {
-  content: {
-    flex: 1,
-    overflow: 'auto'
-  },
-  descriptionWrapper: {
-    padding: '3vw'
-  },
-  description: {
-    width: '90%',
-    margin: 'auto',
-    textAlign: 'justify',
-    color: theme.textPrimary,
-    fontSize: '1.6vw',
-    whiteSpace: 'pre-wrap'
-  },
-  pricesWrapper: {
-    padding: '3vw'
-  },
-  prices: {
-    width: '90%',
-    margin: 'auto'
-  },
-  countryLink: {
-    textDecoration: 'none'
-  },
-  priceRow: {
-    height: '4vw',
-    backgroundColor: theme.backgroundDarker
-  },
-  priceRowOdd: {
-    backgroundColor: theme.backgroundColor
-  },
-  priceRowCountry: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    color: theme.textPrimary,
-    fontSize: '1.6vw'
-  },
-  priceRowValue: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    color: theme.textPrimary,
-    fontSize: '1.6vw'
-  }
-};
-
-const Prices = (props) => <View style={styles.content}>
-  <div style={styles.descriptionWrapper}>
-    <div style={styles.description}>
+const Prices = (props) => <div>
+  <div>
+    <div>
       {'Для Вашего удобства, мы собрали цены по всем регионам и хотим предложить лучшие фотосессии по всему миру. Наши цены зависят от:\n\n- вида съемки;\n- места съемки в каждой отдельной стране;\n- количества локаций;\n- продолжительности съемки;\n- количества отснятых и отретушированных фото.\n\nПоэтому, сформированные ниже цены, детально обсуждаются перед заказом съемки. Мы постараемся учесть все Ваши пожелания и выполнить их на высоком профессиональном, и техническом уровне.'}
     </div>
   </div>
-  <div style={styles.pricesWrapper}>
-    <View style={styles.prices}>
+  <div>
+    <div>
       {props.destinations.map((country, index) => <NavLink
-        style={styles.countryLink}
         key={index}
         to={`/destinations/${country.key}`}
       >
-        <View
-          horizontal
-          style={index % 2 === 0 ? styles.priceRow : {
-            ...styles.priceRow,
-            ...styles.priceRowOdd
-          }}
-        >
-          <View style={styles.priceRowCountry}>{country.title}</View>
-          <View style={styles.priceRowValue}>{country.price}</View>
-        </View>
+        <div>
+          <div>{country.title}</div>
+          <div>{country.price}</div>
+        </div>
       </NavLink>)}
-    </View>
+    </div>
   </div>
-</View>;
+</div>;
 
 Prices.propTypes = {
   destinations: PropTypes.array.isRequired
