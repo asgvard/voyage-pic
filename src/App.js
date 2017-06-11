@@ -12,7 +12,7 @@ import 'whatwg-fetch';
 import reducer from './reducer';
 import Splash from './containers/Splash';
 import Destinations from './containers/Destinations';
-import About from './containers/About';
+import Feedback from './containers/Feedback';
 import Prices from './containers/Prices';
 import Contacts from './containers/Contacts';
 import Partners from './containers/Partners';
@@ -32,13 +32,13 @@ const routes = [{
   exact: true,
   component: Prices
 }, {
-  path: '/about',
-  exact: true,
-  component: About
-}, {
   path: '/contacts',
   exact: true,
   component: Contacts
+}, {
+  path: '/feedback',
+  exact: true,
+  component: Feedback
 }, {
   path: '/partners',
   exact: true,

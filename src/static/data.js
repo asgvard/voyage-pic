@@ -128,3 +128,9 @@ export const photographers = {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt efficitur purus eu tristique. Etiam commodo turpis ac libero convallis, eget elementum ante faucibus. In a ornare felis, in pellentesque velit. Integer mi nisl, porta at maximus ut, laoreet non eros. Integer mollis felis lectus. Proin iaculis diam vel erat eleifend, ut consequat nisi mattis.'
   }]
 };
+
+export const feedbacks = [{
+  name: 'Валентина и Дмитрий',
+  text: 'Это был лучший опыт фотосессии в нашей жизни. Недавно мы снимали свадебную съемку в Греции и остались очень довольны подаренными эмоциями и фотографиями, которые мы получили. Спасибо фотографу и всем ребятам из Вояж Пик, которые работали вместе с нами.',
+  image: '1.jpg'
+}];

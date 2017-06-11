@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => <div>
+const Feedback = () => <div>
   <div>
     <img src={require('../../resources/images/logo-gradient.png')} alt={'Voyage Pic'} />
   </div>
@@ -11,4 +11,4 @@ const About = () => <div>
   </div>
 </div>;
 
-export default About;
+export default Feedback;

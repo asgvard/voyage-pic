@@ -1,37 +1,106 @@
-.footer {
+.footer-wrapper {
+  clear: both;
+}
+
+.footer-feedback {
+  height: 6rem;
+  width: 100%;
+  background-color: #e1e1e1;
+}
+
+.footer-feedback .feedback {
+  width: 60%;
+  height: 6rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-feedback .feedback .photo {
+  width: 20%;
+  height: 5rem;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.footer-feedback .feedback .photo img {
+  border-radius: 50%;
+  max-height: 60%;
+  border: solid .1rem #08729d;
+}
+
+.footer-feedback .feedback .feedback-text-wrapper {
+  height: 5rem;
+  width: 60%;
+  display: inline-block;
+  padding: .5rem;
+}
+
+.footer-feedback .feedback .feedback-text-border {
+  height: 4rem;
+  border: dashed .1rem #08729d;
+  border-radius: .5rem;
+  background-color: #f3f3f3;
+  padding: .5rem;
+}
+
+.footer-feedback .feedback .feedback-text {
+  height: 4rem;
+  text-align: justify;
+  font-size: .6rem;
+  overflow: hidden;
+  font-style: italic;
+}
+
+.footer-feedback .about {
+  height: 6rem;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-feedback .about-text {
+  text-align: justify;
+  font-size: .6rem;
+  padding: 1rem 1rem 0 1rem;
+  height: 5rem;
+  overflow: hidden;
+}
+
+.footer-social {
   height: 2rem;
   width: 100%;
-  clear: both;
   background-color: #08729d;
 }
 
-.footer .text {
+.footer-social .text {
   display: inline-block;
   vertical-align: top;
   text-align: left;
   color: #fafaff;
 }
 
-.footer .copyright {
+.footer-social .copyright {
   width: 20%;
   line-height: 2rem;
   font-size: .6rem;
 }
 
-.footer .description {
+.footer-social .description {
   width: 60%;
   line-height: 1rem;
   font-size: .6rem;
   text-align: center;
 }
 
-.footer .links {
+.footer-social .links {
   display: inline-block;
   width: 20%;
   text-align: right;
 }
 
-.footer a {
+.footer-social a {
   display: inline-block;
   text-decoration: none;
   color: #fafaff;
@@ -42,15 +111,26 @@
 
 /* tablet */
 @media only screen and (max-width: 768px) {
-  .footer .description {
+  .footer-social .description {
     display: none;
   }
 
-  .footer .copyright {
+  .footer-social .copyright {
     width: 30%;
   }
 
-  .footer .links {
+  .footer-social .links {
     width: 70%;
+  }
+}
+
+/* phones */
+@media only screen and (max-width: 600px) {
+  .footer-feedback .about-text {
+    font-size: .4rem;
+  }
+
+  .footer-feedback .feedback .feedback-text {
+    font-size: .4rem;
   }
 }
