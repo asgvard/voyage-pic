@@ -39,6 +39,10 @@ a {
   height: 4rem;
 }
 
+.clear {
+  clear: both;
+}
+
 /* tablet */
 @media only screen and (max-width: 768px) {
   .container {

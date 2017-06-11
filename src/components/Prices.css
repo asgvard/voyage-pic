@@ -1,0 +1,118 @@
+.prices {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.prices-headline {
+  height: 40vh;
+  background-color: white;
+}
+
+.prices-headline-description {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 70%;
+}
+
+.prices-headline-description h2, .prices-headline-description div {
+  width: 80%;
+  text-align: justify;
+  color: #08729d;
+}
+
+.prices-headline-description div {
+  font-size: .7rem;
+}
+
+.prices-headline-photo {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  text-align: right;
+}
+
+.prices-headline-photo img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.prices-table {
+  background-color: #e6eff8;
+  padding: 2rem 0 2rem 0;
+}
+
+.prices-table-note {
+  width: 60%;
+  margin: 0 auto;
+  color: #08729d;
+  font-size: .6rem;
+}
+
+.prices-table table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.prices-table th {
+  font-size: 1.2rem;
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.prices-table td {
+  color: black;
+  padding: .5rem 1rem;
+  width: 50%;
+}
+
+.prices-table td a {
+  text-decoration: none;
+  color: black;
+}
+
+.prices-table td a:visited {
+  color: black;
+}
+
+.prices-table td:first-child {
+  text-align: right;
+}
+
+.prices-table td:last-child {
+  text-align: left;
+}
+
+.prices-table tr:first-child {
+  background-color: #ced7e0;
+}
+
+.prices-table tr.even {
+  background-color: #dae5ee;
+}
+
+/* phones */
+@media only screen and (max-width: 600px) {
+  .prices-headline-description div {
+    font-size: .5rem;
+  }
+
+  .prices-table-note {
+    width: 80%;
+  }
+
+  .prices-table table {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .prices-table th {
+    font-size: .8rem;
+  }
+
+  .prices-table td {
+    font-size: .6rem;
+  }
+}

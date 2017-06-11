@@ -1,0 +1,61 @@
+.country-main {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.country-headline {
+  height: 40vh;
+  background-color: #e6eff8;
+}
+
+.country-headline-poster {
+  position: relative;
+  text-align: center;
+  color: #fafaff;
+}
+
+.country-headline-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-headline-description {
+  padding: 0 0 1rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+  text-shadow: .1rem .1rem .2rem #000;
+}
+
+.country-photographers {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+/* only one photograper */
+
+/* multiple photographers */
+.country-photographer.multiple {
+  vertical-align: top;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 16rem;
+  height: 20rem;
+  display: inline;
+  float: left;
+}
+
+.country-photographer-avatar {
+  height: 10rem;
+}
+
+.country-photographer-avatar img {
+  height: 100%;
+}

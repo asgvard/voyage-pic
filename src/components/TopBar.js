@@ -17,12 +17,12 @@ const TopBar = () => <div className="top-bar">
       <TopBarLink to="/prices">
         <div>{'Цены'}</div>
       </TopBarLink>
-      <TopBarLink to="/about">
-        <div>{'О нас'}</div>
-      </TopBarLink>
       <TopBarLink to="/contacts">
         <div>{'Контакты'}</div>
       </TopBarLink>
+      {/*<TopBarLink to="/feedback">
+        <div>{'Отзывы'}</div>
+      </TopBarLink>*/}
       <TopBarLink to="/partners">
         <div>{'Партнеры'}</div>
       </TopBarLink>
