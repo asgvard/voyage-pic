@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import './FullscreenGallery.css';
 
 class FullscreenGallery extends Component {
   render() {
@@ -10,45 +11,33 @@ class FullscreenGallery extends Component {
     const photos = this.props.photographer && this.props.portfolio[this.props.photographer];
     const photoSource = photos && photos[this.props.photoIndex];
 
-    return (<div>
-      <div>
-        <div>
-          <div onClick={this.props.closeGallery}>
-            <i className={'material-icons'}>{'close'}</i>
-          </div>
-        </div>
+    return (<div className="fullscreen-gallery">
+      <div className="fullscreen-gallery-close-button" onClick={this.props.closeGallery}>
+        <i className={'material-icons'}>{'close'}</i>
       </div>
-      <div>
-        <div>
-          {photos && photos.length > 1 && this.props.photoIndex > 0 && <div
-            onClick={() => {
-              this.props.galleryNavigate(false);
-            }}
-          >
-            <div>
-              <i className={'material-icons'}>
-                {'keyboard_arrow_left'}
-              </i>
-            </div>
-          </div>}
-        </div>
-        <div>
-          {photoSource && <img src={photoSource} alt={this.props.photoIndex} />}
-        </div>
-        <div>
-          {photos && photos.length > 1 && this.props.photoIndex < (photos.length - 1) && <div
-            onClick={() => {
-              this.props.galleryNavigate(true);
-            }}
-          >
-            <div>
-              <i className={'material-icons'}>
-                {'keyboard_arrow_right'}
-              </i>
-            </div>
-          </div>}
-        </div>
+      {photos && photos.length > 1 && this.props.photoIndex > 0 && <div
+        className="fullscreen-gallery-left-button"
+        onClick={() => {
+          this.props.galleryNavigate(false);
+        }}
+      >
+        <i className={'material-icons'}>
+          {'keyboard_arrow_left'}
+        </i>
+      </div>}
+      <div className="fullscreen-gallery-photo">
+        {photoSource && <img src={photoSource} alt={this.props.photoIndex} />}
       </div>
+      {photos && photos.length > 1 && this.props.photoIndex < (photos.length - 1) && <div
+        className="fullscreen-gallery-right-button"
+        onClick={() => {
+          this.props.galleryNavigate(true);
+        }}
+      >
+        <i className={'material-icons'}>
+          {'keyboard_arrow_right'}
+        </i>
+      </div>}
     </div>);
   }
 }

@@ -14,7 +14,7 @@ const Destinations = (props) => <div className="page">
       <img src={require('../../resources/images/destinations-headline.jpg')} alt="Destinations"/>
       <div className="description">
         <h1>{'Фотосессии по всему миру'}</h1>
-        <div>{'VoyagePic делает Ваш мир ярким, как в душе, так и на картинках'}</div>
+        <div>{'VoyagePic делает Ваш мир ярким как в душе, так и на картинках'}</div>
       </div>
     </div>
     <div className="destinations-gallery container">

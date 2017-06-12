@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+
+// import logger from 'redux-logger';
 import {Provider} from 'react-redux';
 import 'whatwg-fetch';
 import reducer from './reducer';
@@ -21,7 +22,7 @@ import NotFound from './components/NotFound';
 import TopBar from './components/TopBar';
 import FullscreenGallery from './containers/FullscreenGallery';
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 const routes = [{
   path: '/',

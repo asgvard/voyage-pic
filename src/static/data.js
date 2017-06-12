@@ -126,21 +126,70 @@ export const destinations = [{
 }];
 
 export const photographers = {
+  'austria': [{
+    id: 'elena-austria',
+    name: 'Елена',
+    image: 'http://www.voyage-pic.com/public/images/photographers/elena-austria.jpg'
+  }],
+  'uae': [{
+    id: 'alexander',
+    name: 'Александр',
+    image: 'http://www.voyage-pic.com/public/images/photographers/alexander.jpg'
+  }],
+  'mexico': [{
+    id: 'kai',
+    name: 'Кай'
+  }],
+  'portugal': [{
+    id: 'vladimir',
+    name: 'Владимир',
+    image: 'http://www.voyage-pic.com/public/images/photographers/vladimir.jpg'
+  }],
+  'greece': [{
+    id: 'jannis',
+    name: 'Яннис',
+    image: 'http://www.voyage-pic.com/public/images/photographers/jannis.jpg'
+  } ,{
+    id: 'maxim-greece',
+    name: 'Максим',
+    image: 'http://www.voyage-pic.com/public/images/photographers/maxim-greece.jpg'
+  }],
+  'dominicana': [{
+    id: 'dmitriy',
+    name: 'Дмитрий'
+  }],
+  'czech': [{
+    id: 'lubov',
+    name: 'Любовь',
+    image: 'http://www.voyage-pic.com/public/images/photographers/lubov.jpg'
+  }],
+  'switzerland': [{
+    id: 'maxim',
+    name: 'Максим',
+    image: 'http://www.voyage-pic.com/public/images/photographers/maxim.jpg'
+  }],
+  'italy': [{
+    id: 'elena-italy',
+    name: 'Елена',
+    image: 'http://www.voyage-pic.com/public/images/photographers/elena-italy.jpg'
+  }, {
+    id: 'vadim-italy',
+    name: 'Вадим',
+    image: 'http://www.voyage-pic.com/public/images/photographers/vadim-italy.jpg'
+  }],
   'norway': [{
     id: 'pavel',
     name: 'Павел',
-    image: 'http://www.voyage-pic.com/public/images/photographers/norway/pavel.jpg'
+    image: 'http://www.voyage-pic.com/public/images/photographers/pavel.jpg'
   }],
   'spain': [{
     id: 'svetlana',
     name: 'Светлана',
-    image: 'http://www.voyage-pic.com/public/images/photographers/spain/svetlana.jpg',
-    description: 'Привет, меня зовут Светлана и вот уже несколько лет я живу в прекрасном городе – Барселона. Работаю в самых прекрасных уголках многогранной Испании. Я специализируюсь на разных сьемках: love story, портретная, свадебная, семейная. Помогу Вам окунуться в мир творчества и искусства, и покажу самые волшебные города и места сказочной Испании, которые перенесутся на Ваши фотографии.'
+    image: 'http://www.voyage-pic.com/public/images/photographers/svetlana.jpg'
   }, {
     id: 'vadim',
     name: 'Вадим',
-    image: 'http://www.voyage-pic.com/public/images/photographers/spain/vadim.jpg',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt efficitur purus eu tristique. Etiam commodo turpis ac libero convallis, eget elementum ante faucibus. In a ornare felis, in pellentesque velit. Integer mi nisl, porta at maximus ut, laoreet non eros. Integer mollis felis lectus. Proin iaculis diam vel erat eleifend, ut consequat nisi mattis.'
+    image: 'http://www.voyage-pic.com/public/images/photographers/vadim.jpg'
   }]
 };
 

@@ -29,9 +29,11 @@ const Contacts = () => <div className="page">
       </div>
       <div className="contacts-table">
         <table>
-          {contacts.map((contact, index) => <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
-            <td>{contact}</td>
-          </tr>)}
+          <tbody>
+            {contacts.map((contact, index) => <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
+              <td>{contact}</td>
+            </tr>)}
+          </tbody>
         </table>
       </div>
     </div>

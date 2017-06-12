@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {isEmpty, findIndex} from 'lodash';
 import NotFound from './NotFound';
 import Footer from './partials/Footer';
 import './Country.css';
@@ -9,10 +10,24 @@ class Country extends Component {
     super(props);
 
     this.state = {
-      photographer: null
+      photographer: null,
+      suppressRotation: false
     };
 
     this.onPhotographerSelected = this.onPhotographerSelected.bind(this);
+
+    this.rotationInterval = setInterval(() => {
+      const currentIndex = findIndex(this.props.photographers, (photographer) =>
+        this.state.photographer === photographer.id);
+
+      if (currentIndex > -1) {
+        if (this.props.photographers[currentIndex + 1]) {
+          this.onPhotographerSelected(this.props.photographers[currentIndex + 1].id);
+        } else if (this.props.photographers.length > 1 && currentIndex === this.props.photographers.length - 1) {
+          this.onPhotographerSelected(this.props.photographers[0].id);
+        }
+      }
+    }, 7000);
   }
 
   componentDidMount() {
@@ -30,7 +45,23 @@ class Country extends Component {
     }
   }
 
-  onPhotographerSelected(id) {
+  componentWillUnmount() {
+    if (this.rotationInterval) {
+      clearInterval(this.rotationInterval);
+    }
+  }
+
+  onPhotographerSelected(id, manual = false) {
+    if (manual === true) {
+      this.setState({
+        suppressRotation: true
+      });
+
+      if (this.rotationInterval) {
+        clearInterval(this.rotationInterval);
+      }
+    }
+
     if (id !== this.state.photographer) {
       this.setState({
         photographer: id
@@ -41,18 +72,24 @@ class Country extends Component {
   }
 
   renderPhotographer(photographer) {
-    const isActive = photographer.id === this.state.photographer && this.props.photographers.length > 1;
+    const isActive = photographer.id === this.state.photographer;
     const isOnly = this.props.photographers.length === 1;
+    const isPhoto = !isEmpty(photographer.image);
+    const isCv = !isEmpty(photographer.description);
 
     return (<div
-      className={`country-photographer ${isOnly ? '' : 'multiple'} ${isActive ? 'active' : ''}`}
+      className={`country-photographer ${isOnly ? 'only' : 'multiple'}
+        ${isActive ? 'active' : ''} ${isCv ? '' : 'no-cv'} ${isPhoto ? '' : 'no-photo'}`}
       key={photographer.id}
       onClick={() => {
-        this.onPhotographerSelected(photographer.id);
+        this.onPhotographerSelected(photographer.id, true);
       }}
     >
       <div className="country-photographer-avatar">
-        <img src={photographer.image} alt={photographer.name} />
+        <img
+          src={isPhoto ? photographer.image : require('../../resources/images/no-photo.png')}
+          alt={photographer.name}
+        />
         <div>
           {photographer.name}
         </div>
@@ -68,8 +105,11 @@ class Country extends Component {
       return null;
     }
 
-    return (<div>
-      {this.props.portfolio[this.state.photographer].map((photo, index) =>
+    return (<div className="country-portfolio">
+      {this.props.portfolio[this.state.photographer].map((photo, index) => <div
+        key={index}
+        className="country-portfolio-photo"
+      >
         <img
           key={index}
           src={photo}
@@ -77,7 +117,8 @@ class Country extends Component {
           onClick={() => {
             this.props.onPhotoClicked(this.state.photographer, index);
           }}
-        />)}
+        />
+      </div>)}
     </div>);
   }
 
@@ -87,8 +128,8 @@ class Country extends Component {
     }
 
     const photographersMessage = this.props.photographers.length === 0 ?
-      'Информация о фотографах в данном регионе временно недоступна.' :
-      'Познакомьтесь с нашей командой фотографов в данном регионе';
+      'Информация о фотографах в данном регионе временно недоступна' :
+      'Наши фотографы в данном регионе';
 
     return (<div className="page">
       <div className="country-main">

@@ -37,22 +37,24 @@ const Prices = (props) => <div className="page">
         {'* нажмите на строку, чтобы перейти на страницу региона'}
       </div>
       <table>
-        <tr>
-          <th>{'Регион'}</th>
-          <th>{'Стоимость'}</th>
-        </tr>
-        {props.destinations.map((country, index) => <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
-          <td>
-            <Link to={`/destinations/${country.key}`}>
-              {country.title}
-            </Link>
-          </td>
-          <td>
-            <Link to={`/destinations/${country.key}`}>
-              {country.price}
-            </Link>
-          </td>
-        </tr>)}
+        <tbody>
+          <tr>
+            <th>{'Регион'}</th>
+            <th>{'Стоимость'}</th>
+          </tr>
+          {props.destinations.map((country, index) => <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
+            <td>
+              <Link to={`/destinations/${country.key}`}>
+                {country.title}
+              </Link>
+            </td>
+            <td>
+              <Link to={`/destinations/${country.key}`}>
+                {country.price}
+              </Link>
+            </td>
+          </tr>)}
+        </tbody>
       </table>
     </div>
     <Footer />
