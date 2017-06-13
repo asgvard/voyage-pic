@@ -19,7 +19,7 @@
 .country-headline-poster img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .country-headline-description {
@@ -28,7 +28,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.2);
   font-style: italic;
   text-shadow: .1rem .1rem .2rem #000;
 }
