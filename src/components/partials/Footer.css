@@ -54,7 +54,7 @@
 }
 
 .footer-feedback .about {
-  height: 6rem;
+  height: 7rem;
   width: 40%;
   display: inline-block;
   vertical-align: top;
@@ -62,7 +62,7 @@
 
 .footer-feedback .about-text {
   text-align: justify;
-  font-size: .6rem;
+  font-size: .65rem;
   padding: 1rem 1rem 0 1rem;
   height: 5rem;
   overflow: hidden;
@@ -111,6 +111,14 @@
 
 /* tablet */
 @media only screen and (max-width: 768px) {
+  .footer-feedback .about-text {
+    font-size: .6rem;
+  }
+
+  .footer-feedback .feedback .feedback-text {
+    font-size: .55rem;
+  }
+
   .footer-social .description {
     display: none;
   }
@@ -126,6 +134,17 @@
 
 /* phones */
 @media only screen and (max-width: 600px) {
+  .footer-feedback .about-text {
+    font-size: .5rem;
+  }
+
+  .footer-feedback .feedback .feedback-text {
+    font-size: .5rem;
+  }
+}
+
+/* phone mini */
+@media only screen and (max-width: 400px) {
   .footer-feedback .about-text {
     font-size: .4rem;
   }

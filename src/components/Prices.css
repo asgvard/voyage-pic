@@ -6,6 +6,7 @@
 
 .prices-headline {
   height: 40vh;
+  min-height: 20rem;
   background-color: white;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .prices-headline-description div {
-  font-size: .7rem;
+  font-size: .9rem;
 }
 
 .prices-headline-photo {
@@ -47,7 +48,7 @@
   width: 60%;
   margin: 0 auto;
   color: #08729d;
-  font-size: .6rem;
+  font-size: .8rem;
 }
 
 .prices-table table {
@@ -93,10 +94,38 @@
   background-color: #dae5ee;
 }
 
+/* XL desktop */
+@media only screen and (min-width: 1281px) {
+  .prices-headline-description div {
+    font-size: 1rem;
+  }
+}
+
+/* tablets */
+@media only screen and (max-width: 800px) {
+  .prices-headline-description div {
+    font-size: .75rem;
+  }
+}
+
 /* phones */
 @media only screen and (max-width: 600px) {
+  .prices-headline-photo {
+    display: none;
+  }
+
+  .prices-headline-description {
+    display: block;
+    width: 100%;
+  }
+
+  .prices-headline-description h2 {
+    width: 100%;
+  }
+
   .prices-headline-description div {
-    font-size: .5rem;
+    width: 100%;
+    font-size: .75rem;
   }
 
   .prices-table-note {

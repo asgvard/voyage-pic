@@ -4,14 +4,20 @@
   overflow: auto;
 }
 
+.partners-headline {
+  padding: 1rem 3rem;
+  text-align: justify;
+  color: #08729d;
+}
+
 .partners-list {
   text-align: center;
 }
 
 .partner-block {
   display: inline-block;
-  width: 40vw;
-  height: 40vw;
+  width: 25vw;
+  height: 25vw;
   padding: 2rem;
 }
 
@@ -23,9 +29,23 @@
   height: 100%;
 }
 
+/* L desktop */
+@media only screen and (min-width: 1000px) {
+  .partners-headline {
+    font-size: 1rem;
+  }
+}
+
 @media only screen and (max-width: 640px) {
   .partner-block {
     width: 80vw;
     height: 80vw;
+  }
+}
+
+/* phone mini */
+@media only screen and (max-width: 430px) {
+  .partners-headline {
+    font-size: .6rem;
   }
 }

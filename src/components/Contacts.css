@@ -6,6 +6,7 @@
 
 .contacts-headline {
   height: 40vh;
+  min-height: 20rem;
   background-color: #e6eff8;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .contacts-description div {
-  font-size: .7rem;
+  font-size: .85rem;
 }
 
 .contacts-table {
@@ -62,6 +63,13 @@
 
 .contacts-table tr.odd {
   background-color: #dae5ee;
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+  .contacts-main {
+    width: 85%;
+  }
 }
 
 /* phones */
@@ -88,12 +96,5 @@
 
   .contacts-table td {
     font-size: .5rem;
-  }
-}
-
-/* tablet */
-@media only screen and (max-width: 768px) {
-  .contacts-main {
-    width: 85%;
   }
 }

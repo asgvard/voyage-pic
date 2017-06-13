@@ -22,6 +22,7 @@
 
 .destinations-headline {
   height: 40vh;
+  min-height: 20rem;
   background-color: #e6eff8;
   position: relative;
   text-align: center;
