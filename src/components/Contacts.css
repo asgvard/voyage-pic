@@ -31,7 +31,8 @@
   display: inline-block;
   vertical-align: top;
   height: 100%;
-  width: 60%;
+  width: 50%;
+  margin-bottom: 2rem;
 }
 
 .contacts-description h2, .contacts-description div {
@@ -39,14 +40,19 @@
   color: #08729d;
 }
 
+.contacts-description h2 {
+  padding: 1rem 1rem 0 1rem;
+}
+
 .contacts-description div {
   font-size: .85rem;
+  padding: 1rem;
 }
 
 .contacts-table {
   display: inline-block;
-  width: 40%;
-  padding: 2rem 0 2rem 0;
+  width: 50%;
+  padding: 6rem 0 3rem 0;
 }
 
 .contacts-table table {

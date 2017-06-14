@@ -1,3 +1,7 @@
+.clear {
+  padding-top: 1rem;
+}
+
 .country-main {
   width: 100%;
   height: 100%;
@@ -37,23 +41,25 @@
   width: 80%;
   margin: 0 auto;
   max-width: 1280px;
+  padding-top: 2rem;
 }
 
 .country-photographer-avatar {
-  height: 13rem;
-  padding: 2rem 0 0 0;
+  height: 20rem;
   position: relative;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .country-photographer-avatar img {
-  height: 80%;
+  height: 100%;
   cursor: pointer;
   object-fit: contain;
 }
 
 .country-photographer-avatar div {
   position: absolute;
-  bottom: 20%;
+  bottom: 0;
   left: 0;
   right: 0;
   color: #fafaff;
@@ -62,44 +68,30 @@
 }
 
 .country-photographer-cv {
-  height: 12rem;
   color: #08729d;
   text-align: justify;
   padding: 1rem;
-  font-size: .65rem;
+  font-size: .7rem;
   overflow: hidden;
 }
 
 /* only one photograper */
 .country-photographer.only {
   width: 100%;
-  height: 20rem;
   opacity: 1;
 }
 
 .country-photographer.only .country-photographer-avatar {
-  height: 18rem;
+  height: 20rem;
   width: 40%;
   display: inline;
   float: left;
   vertical-align: top;
-}
-
-.country-photographer.only.no-cv .country-photographer-avatar {
-  width: 100%;
-  display: block;
-  float: none;
-  vertical-align: top;
+  margin-bottom: 1rem;
 }
 
 .country-photographer.only .country-photographer-cv {
   font-size: .85rem;
-  height: 17rem;
-  padding-top: 2rem;
-}
-
-.country-photographer.only.no-cv .country-photographer-cv {
-  display: none;
 }
 
 /* multiple photographers */
@@ -108,7 +100,6 @@
   margin: 0 auto;
   width: 50%;
   min-width: 16rem;
-  height: 29rem;
   display: inline;
   float: left;
   opacity: 0.5;
@@ -123,7 +114,6 @@
   text-align: center;
   width: 80%;
   margin: 0 auto;
-  padding: 1rem 0;
 }
 
 .country-portfolio-photo {
@@ -150,32 +140,16 @@
 
 /* L desktop */
 @media only screen and (min-width: 1000px) {
-  .country-photographer-cv {
-    font-size: .7rem;
-  }
 
-  .country-photographer.only .country-photographer-cv {
-    font-size: .9rem;
-  }
-
-  .country-photographer.only .country-photographer-avatar img {
-    height: 100%;
-  }
 }
 
 /* tablet */
 @media only screen and (max-width: 800px) {
-  .country-photographer-cv {
-    font-size: .6rem;
-  }
 
-  .country-photographer.only .country-photographer-cv {
-    font-size: .75rem;
-  }
 }
 
 /* wrap point for multiple photographers */
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 719px) {
   .country-photographers {
     width: 85%;
   }
@@ -184,12 +158,12 @@
     width: 100%;
   }
 
-  .country-photographer-cv {
-    font-size: .7rem;
-  }
-
-  .country-photographer.only .country-photographer-cv {
-    font-size: .7rem;
+  .country-photographer.only .country-photographer-avatar {
+    height: 16rem;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    float: none;
   }
 }
 
@@ -199,12 +173,12 @@
     width: 90%;
   }
 
-  .country-portfolio-photo {
-    width: 33.33%;
+  .country-photographer-avatar {
+    height: 16rem;
   }
 
-  .country-photographer.only .country-photographer-cv {
-    font-size: .6rem;
+  .country-portfolio-photo {
+    width: 33.33%;
   }
 }
 
@@ -218,21 +192,8 @@
     width: 50%;
   }
 
-  .country-photographer-cv {
-    font-size: .6rem;
-  }
-
-  .country-photographer.only {
-    height: 16rem;
-  }
-
-  .country-photographer.only .country-photographer-avatar {
-    height: 15rem;
-  }
-
-  .country-photographer.only .country-photographer-cv {
-    font-size: .5rem;
-    height: 14rem;
+  .country-photographer-cv, .country-photographer.only .country-photographer-cv {
+    font-size: .65rem;
   }
 }
 
@@ -240,9 +201,5 @@
 @media only screen and (max-width: 320px) {
   .country-portfolio-photo {
     width: 100%;
-  }
-
-  .country-photographer.only .country-photographer-cv {
-    font-size: .4rem;
   }
 }
