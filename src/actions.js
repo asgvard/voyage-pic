@@ -1,6 +1,7 @@
 import {
   destinations as staticDestinations,
-  photographers as staticPhotographers
+  photographers as staticPhotographers,
+  partners as staticPartners
 } from './static/data';
 
 export const ACTION_TYPES = {
@@ -13,6 +14,9 @@ export const ACTION_TYPES = {
   LOAD_PORTFOLIO_REQUEST: 'LOAD_PORTFOLIO_REQUEST',
   LOAD_PORTFOLIO_SUCCESS: 'LOAD_PORTFOLIO_SUCCESS',
   LOAD_PORTFOLIO_FAILURE: 'LOAD_PORTFOLIO_FAILURE',
+  LOAD_PARTNERS_REQUEST: 'LOAD_PARTNERS_REQUEST',
+  LOAD_PARTNERS_SUCCESS: 'LOAD_PARTNERS_SUCCESS',
+  LOAD_PARTNERS_FAILURE: 'LOAD_PARTNERS_FAILURE',
   INVOKE_FULLSCREEN_GALLERY: 'INVOKE_FULLSCREEN_GALLERY',
   GALLERY_NAVIGATE: 'GALLERY_NAVIGATE',
   CLOSE_GALLERY: 'CLOSE_GALLERY'
@@ -125,3 +129,31 @@ export const galleryNavigate = (next = true) => ({
 export const closeGallery = () => ({
   type: ACTION_TYPES.CLOSE_GALLERY
 });
+
+const loadPartnersSuccess = (partners) => ({
+  type: ACTION_TYPES.LOAD_PARTNERS_SUCCESS,
+  payload: {
+    partners
+  }
+});
+
+const loadPartnersFailure = (error) => ({
+  type: ACTION_TYPES.LOAD_PARTNERS_FAILURE,
+  payload: {
+    error
+  }
+});
+
+export const loadPartners = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: ACTION_TYPES.LOAD_PARTNERS_REQUEST
+    });
+
+    const partners = staticPartners;
+
+    dispatch(loadPartnersSuccess(partners));
+  } catch (error) {
+    dispatch(loadPartnersFailure(error));
+  }
+};

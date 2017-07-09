@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Partners from '../components/Partners';
+import {loadPartners} from '../actions';
 
-const PartnersContainer = (props) => <Partners {...props} />;
+class PartnersContainer extends Component {
+  componentDidMount() {
+    this.props.loadPartners();
+  }
 
-const mapStateToProps = () => ({});
+  render() {
+    return (<Partners {...this.props} />);
+  }
+}
 
-export default connect(mapStateToProps, {})(PartnersContainer);
+PartnersContainer.propTypes = {
+  loadPartners: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({partners}) => ({partners});
+
+export default connect(mapStateToProps, {
+  loadPartners
+})(PartnersContainer);

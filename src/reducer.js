@@ -8,7 +8,8 @@ const initialState = {
     shown: false,
     photographer: null,
     photoIndex: null
-  }
+  },
+  partners: []
 };
 
 function appReducer(state = initialState, action) {
@@ -60,6 +61,12 @@ function appReducer(state = initialState, action) {
         ...state.gallery,
         photoIndex: action.payload.next ? state.gallery.photoIndex + 1 : state.gallery.photoIndex - 1
       }
+    });
+  }
+
+  case ACTION_TYPES.LOAD_PARTNERS_SUCCESS: {
+    return Object.assign({}, state, {
+      partners: action.payload.partners
     });
   }
 
