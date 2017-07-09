@@ -20,9 +20,9 @@ const TopBar = () => <div className="top-bar">
       <TopBarLink to="/contacts">
         <div>{'Контакты'}</div>
       </TopBarLink>
-      {/*<TopBarLink to="/feedback">
+      <TopBarLink to="/feedback">
         <div>{'Отзывы'}</div>
-      </TopBarLink>*/}
+      </TopBarLink>
       <TopBarLink to="/partners">
         <div>{'Партнеры'}</div>
       </TopBarLink>

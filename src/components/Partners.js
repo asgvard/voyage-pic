@@ -22,7 +22,7 @@ class Partners extends Component {
       <div className="partners">
         <div className="top-spacer" />
         {this.props.partners.map((partner, index, partners) =>
-          this.renderPartner(partner, index < partners.length - 2))}
+          this.renderPartner(partner, index < partners.length - 1))}
         <Footer />
       </div>
     </div>);

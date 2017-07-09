@@ -2,14 +2,41 @@ import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
 import {feedbacks} from '../../static/data';
 import './Footer.css';
+import {Link} from 'react-router-dom';
 
 class Footer extends Component {
-  renderFeedback() {
-    const feedback = feedbacks[0];
+  constructor(props) {
+    super(props);
 
-    return (<div className="feedback">
+    this.state = {
+      feedbackIndex: 0
+    };
+
+    this.feedbackInterval = null;
+  }
+
+  componentDidMount() {
+    this.feedbackInterval = setInterval(() => {
+      const nextIndex = this.state.feedbackIndex === feedbacks.length - 1 ? 0 : this.state.feedbackIndex + 1;
+
+      this.setState({
+        feedbackIndex: nextIndex
+      });
+    }, 15000);
+  }
+
+  componentWillUnmount() {
+    if (this.feedbackInterval) {
+      clearInterval(this.feedbackInterval);
+    }
+  }
+
+  renderFeedback() {
+    const feedback = feedbacks[this.state.feedbackIndex];
+
+    return (<Link to="/feedback" className="feedback">
       <div className="photo">
-        <img src={require(`../../../resources/images/feedbacks/${feedback.image}`)} alt={feedback.name}/>
+        <img src={feedback.image} alt={feedback.name}/>
       </div>
       <div className="feedback-text-wrapper">
         <div className="feedback-text-border">
@@ -18,7 +45,7 @@ class Footer extends Component {
           </div>
         </div>
       </div>
-    </div>);
+    </Link>);
   }
 
   render() {

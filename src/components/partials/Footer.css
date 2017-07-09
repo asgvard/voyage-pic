@@ -51,6 +51,8 @@
   font-size: .6rem;
   overflow: hidden;
   font-style: italic;
+  text-decoration: none;
+  color: black;
 }
 
 .footer-feedback .about {

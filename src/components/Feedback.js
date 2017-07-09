@@ -1,14 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Footer from './partials/Footer';
+import './Feedback.css';
+import {feedbacks} from '../static/data';
 
-const Feedback = () => <div>
-  <div>
-    <img src={require('../../resources/images/logo-gradient.png')} alt={'Voyage Pic'} />
-  </div>
-  <div>
-    <div>
-      {'Есть три вещи, на которые можно бесконечно долго смотреть: это огонь, вода и фотографии, которые создаёт наша профессиональная команда VoyagePic, работающая в разных уголках планеты. Любовь к созданию идеальных фотографий и улыбки наших счастливых клиентов - это те вещи, которые вдохновляют нас трудиться ещё больше и придумывать новые идеи для Вас.\n\nСохранить тёплые воспоминания, увидеть мир идеальным – все это возможно, если Вы обратитесь к нам. Мы поможем сделать Ваше путешествие ярким и получить фотографии, о которых Вы всегда мечтали. Ведь с Вами будет работать команда профессионалов, которая любит свою работу и имеет индивидуальный подход к каждому клиенту. Мы можем предложить разноплановые съемки, такие как: репортажная, индивидуальная, прогулочная, семейная, lovestory, свадебная или любая другая съемка по Вашему желанию.\n\nVoyagePic – делает Ваш мир ярким, как в душе, так и на картинках.\n\nСохрани эти незабываемые эмоции вместе с нами!'}
-    </div>
-  </div>
-</div>;
+class Feedback extends Component {
+  renderFeedback(feedback) {
+    return (<div key={feedback.id} className="feedback-block">
+
+    </div>);
+  }
+
+  render() {
+    return (<div className="page">
+      <div className="feedback">
+        <div className="top-spacer" />
+        {feedbacks.map((feedback, index) =>
+          this.renderFeedback(feedback))}
+        <Footer />
+      </div>
+    </div>);
+  }
+}
 
 export default Feedback;
