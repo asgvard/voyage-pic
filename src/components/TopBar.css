@@ -69,6 +69,6 @@ a.active.top-bar-link div {
 /* phones mini */
 @media only screen and (max-width: 400px) {
   .top-bar {
-    font-size: .6rem;
+    font-size: .8rem;
   }
 }
