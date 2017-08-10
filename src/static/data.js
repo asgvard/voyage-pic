@@ -26,7 +26,7 @@ export const destinations = [{
 }, {
   key: 'greece',
   title: 'Греция',
-  price: 'от 80€ / 1 час',
+  price: 'от 150€ / 1 час',
   image: 'http://www.voyage-pic.com/public/images/destinations/greece.jpg'
 }, {
   key: 'dominican',
